@@ -46,7 +46,7 @@ void freeSlice(Slice *s) {
 }
 
 int main() {
-    Slice slice = newSlice(2); //Initialize slice of 0 elements with max capacity of 10
+    Slice slice = newSlice(2); //Initialize slice of 0 elements with max capacity of 2
     insert(&slice, 5);
     insert(&slice, 10);
     insert(&slice, 15);
