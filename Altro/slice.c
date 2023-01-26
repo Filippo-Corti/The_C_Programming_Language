@@ -44,6 +44,8 @@ void freeSlice(Slice *s) {
     s->length = s->capacity = 0;
 }
 
+// Per un'implementazione più sensata vedere Lab07/extractions.c
+
 int main() {
     Slice slice = newSlice(2); //Initialize slice of 0 elements with max capacity of 2
     insert(&slice, 5);
