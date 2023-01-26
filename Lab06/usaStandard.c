@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
         printf("Ultima vocale di %s in posizione %d\n", argv[1], lastVowel + 1);
     printf("%s\n", strRepeat(s2, 3));
     printf("%s\n", strRepeatChr(s1, 5));
-    char* extracted = extractDigits(argv[1]);
-    printf("%d\n", atoi(extracted));
+    char* extracted = extractDigits(argv[1]); //Apparently atoi() does extracts the numbers even if the string has other symbols in it
+    printf("%d\n", atoi(extracted)); 
     printf("%f\n", (float)atoi(extracted) / pow(10.0, (double)strlen(extracted)));
 }

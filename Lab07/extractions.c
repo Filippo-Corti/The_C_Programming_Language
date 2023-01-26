@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-// ----------- Tentativo di replicare le slice di Go in linguaggio C -----------
+/* ----------- SLICE -------- */
 
 typedef struct {
     int length;
@@ -44,17 +45,25 @@ void freeSlice(Slice *s) {
     s->length = s->capacity = 0;
 }
 
+/* -------- End of SLICE -------- */
+
+
 int main() {
-    Slice slice = newSlice(2); //Initialize slice of 0 elements with max capacity of 2
-    insert(&slice, 5);
-    insert(&slice, 10);
-    insert(&slice, 15);
+    Slice slice;
+    initSlice(&slice, 5);
     insert(&slice, 20);
-    insert(&slice, 25);
-    printf("La slice ha lunghezza %d e capacità %d\n", slice.length, slice.capacity);
-    printSlice(slice);
-    removeLast(&slice);
-    printf("La slice ha lunghezza %d e capacità %d\n", slice.length, slice.capacity);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    insert(&slice, 20);
+    // for (int i = 0; i < 10; i++) {
+    //     insert(&slice, 20);
+    // }
     printSlice(slice);
     freeSlice(&slice);
 }
