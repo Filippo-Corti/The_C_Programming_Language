@@ -4,6 +4,8 @@
 
 // ----------- Tentativo di replicare le mappe (string-string) di Go in linguaggio C -----------
 
+// Note: Implementazione di una mappa int-int in Lab08/lunghezze.c
+
 typedef struct {
     char* key;
     char* value;
