@@ -47,23 +47,36 @@ void freeSlice(Slice *s) {
 
 /* -------- End of SLICE -------- */
 
+Slice estraiPari(Slice in) {
+    Slice out = newSlice(5);
+    for(int i = 0; i < in.length; i++) {
+        if (in.data[i] % 2 == 0) {
+            insert(&out, in.data[i]);
+        }
+    }
+    return out;
+}
+
+Slice rimuoviMultipli(Slice in, int m) {
+    Slice out = newSlice(5);
+    for (int i = 0; i < in.length; i++)
+        if (in.data[i] % m)
+            insert(&out, in.data[i]);
+    return out;
+}
 
 int main() {
-    Slice slice;
-    initSlice(&slice, 5);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    insert(&slice, 20);
-    // for (int i = 0; i < 10; i++) {
-    //     insert(&slice, 20);
-    // }
+    srand(time(NULL));
+    Slice slice = newSlice(5);
+    for (int i = 0; i < 10; i++) {
+        insert(&slice, rand() % 100 + 1);
+    }
     printSlice(slice);
+    Slice sliceDiPari = estraiPari(slice);
+    printSlice(sliceDiPari);
+    Slice sliceSenzaMultipli = rimuoviMultipli(slice, 2);
+    printSlice(sliceSenzaMultipli);
     freeSlice(&slice);
+    freeSlice(&sliceDiPari);
+    freeSlice(&sliceSenzaMultipli);
 }
