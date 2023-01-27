@@ -15,14 +15,14 @@ int indexOf(const char* str, char c) {
 
 char** Split(const char* string, char separator) {
     int stringLength = strlen(string);
-    char** tokens = malloc(sizeof(char*) * stringLength);
+    char** tokens = (char**)malloc(sizeof(char*) * stringLength);
     char* token;
     for(int i = 0; string; i++) {
         int firstIndex = indexOf(string, separator);
         switch(firstIndex) {
             case -1: //No more tokens
                 if (strlen(string) > 0) { //This prevents an extra empty token in case the string ends with a separator
-                    token = malloc(sizeof(char) * strlen(string) + 1);
+                    token = (char*)malloc(sizeof(char) * strlen(string) + 1);
                     strcpy(token, string);
                     tokens[i] = token;
                 }
@@ -32,7 +32,7 @@ char** Split(const char* string, char separator) {
                 i--;
                 break;
             default:
-                token = malloc(sizeof(char) * firstIndex + 1);
+                token = (char*)malloc(sizeof(char) * firstIndex + 1);
                 strncpy(token, string, firstIndex);
                 tokens[i] = token;
                 string += firstIndex + 1;
@@ -51,4 +51,5 @@ int main(int argc, char **argv) {
     for (int i = 0; tokens[i]; i++) {
         printf("%s\n", tokens[i]);
     }
+    printf("Initial string is untouched: %s\n", argv[1]);
 }
