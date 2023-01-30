@@ -1,3 +1,4 @@
+#Ignore assembly/binary files 
 Fasi_Compilazione/hello.i
 Fasi_Compilazione/hello.o
 Fasi_Compilazione/hello.s
