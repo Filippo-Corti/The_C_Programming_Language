@@ -11,7 +11,7 @@ int main() {
     printf("%s\n", findLongestSubstring("supercalifragilistichespiralidoso", "materie_plastiche"));
 }
 
-/* Versione base: genero tutte le sottostringhe di una e controllo che siano presenti nell'altra*/
+/* Genero tutte le sottostringhe di una e controllo che siano presenti nell'altra*/
 
 char* findLongestSubstring(char *s1, char *s2) {
     char* longestSubstring = malloc(sizeof(char) * strlen(s1));
