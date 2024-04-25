@@ -37,7 +37,6 @@ void gioca() {
     while(1) {
         show();
 
-
         if (giocatore == 2) {
             printf("Mossa del computer:\n");
         }
